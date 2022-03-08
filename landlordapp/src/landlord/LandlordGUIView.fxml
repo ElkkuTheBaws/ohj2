@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import fi.jyu.mit.fxgui.ListChooser?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane minWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="landlord.LandlordGUIController">
+   <center>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <VBox maxWidth="200.0" prefHeight="222.0" prefWidth="165.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox minWidth="250.0" prefHeight="100.0" prefWidth="300.0">
+                     <children>
+                        <TextField fx:id="hakuehto" onKeyReleased="#handleHaku" prefHeight="25.0" prefWidth="200.0" promptText="Search">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <ScrollPane fitToWidth="true" maxWidth="250.0" prefHeight="300.0" prefWidth="200.0">
+                     <content>
+                        <Accordion fx:id="taloAccordion" minWidth="200.0" />
+                     </content>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </ScrollPane>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </VBox>
+            <Separator orientation="VERTICAL" HBox.hgrow="ALWAYS" />
+            <TabPane tabClosingPolicy="UNAVAILABLE" HBox.hgrow="ALWAYS">
+              <tabs>
+                <Tab text="Talon tiedot">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox>
+                                 <opaqueInsets>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </opaqueInsets>
+                              </VBox>
+                              <GridPane fx:id="gridTalo" prefHeight="199.0" prefWidth="227.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="17.0" prefWidth="227.0" style="-fx-border-width: 3;" text="Talon tiedot" />
+                                    <Label alignment="CENTER" prefHeight="17.0" prefWidth="227.0" style="-fx-border-width: 3;" text="Talon tiedot" GridPane.rowIndex="1" />
+                                    <Label alignment="CENTER" prefHeight="17.0" prefWidth="227.0" style="-fx-border-width: 3;" text="Talon tiedot" GridPane.rowIndex="2" />
+                                    <Label alignment="CENTER" prefHeight="17.0" prefWidth="227.0" style="-fx-border-width: 3;" text="Talon tiedot" GridPane.rowIndex="3" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Asunnon tiedot">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox>
+                                 <opaqueInsets>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </opaqueInsets>
+                              </VBox>
+                              <GridPane fx:id="gridAsunto" prefHeight="199.0" prefWidth="227.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="17.0" prefWidth="227.0" style="-fx-border-width: 3;" text="Talon tiedot" />
+                                    <Label alignment="CENTER" prefHeight="17.0" prefWidth="227.0" style="-fx-border-width: 3;" text="Talon tiedot" GridPane.rowIndex="1" />
+                                    <Label alignment="CENTER" prefHeight="17.0" prefWidth="227.0" style="-fx-border-width: 3;" text="Talon tiedot" GridPane.rowIndex="2" />
+                                    <Label alignment="CENTER" prefHeight="17.0" prefWidth="227.0" style="-fx-border-width: 3;" text="Talon tiedot" GridPane.rowIndex="3" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+            <Separator orientation="VERTICAL" HBox.hgrow="ALWAYS" />
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Asukkaat" textAlignment="CENTER">
+                     <VBox.margin>
+                        <Insets left="80.0" />
+                     </VBox.margin>
+                  </Label>
+                  <ListChooser fx:id="listResidents" maxHeight="100.0" minWidth="200.0" rivit="Asukas 1&#10;Asukas 2&#10;Asukas 3&#10;&#10;">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="27.0" />
+                     </VBox.margin>
+                  </ListChooser>
+                  <HBox>
+                     <children>
+                        <Button fx:id="buttonAddResident" mnemonicParsing="false" onAction="#clickAddResident" text="Lisää asukas">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="buttonDeleteResident" mnemonicParsing="false" onAction="#clickDeleteResident" text="Poista asukas">
+                           <HBox.margin>
+                              <Insets bottom="5.0" left="10.0" right="5.0" top="5.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Button fx:id="buttonResidentInfo" mnemonicParsing="false" onAction="#clickResidentInfo" text="Asukkaan tiedot">
+                     <VBox.margin>
+                        <Insets left="55.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+   <top>
+      <VBox prefHeight="41.0" prefWidth="485.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <Menu mnemonicParsing="false" text="New">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#clickAddHouse" text="Talo" />
+                              <MenuItem mnemonicParsing="false" onAction="#clickAddApartment" text="Asunto" />
+                              <MenuItem mnemonicParsing="false" onAction="#clickAddResident" text="Asukas" />
+                          </items>
+                        </Menu>
+                        <MenuItem mnemonicParsing="false" onAction="#clickSave" text="Save" />
+                        <MenuItem mnemonicParsing="false" onAction="#clickExit" text="Exit" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                        <Menu mnemonicParsing="false" text="Delete">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#clickDeleteSelectedHouse" text="Talo" />
+                          <MenuItem mnemonicParsing="false" onAction="#clickDeleteApartment" text="Asunto" />
+                              <MenuItem mnemonicParsing="false" onAction="#clickDeleteResident" text="Asukas" />
+                          </items>
+                        </Menu>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem fx:id="menuHelpAbout" mnemonicParsing="false" onAction="#clickAbout" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Label alignment="CENTER" text="LANDLORD" textAlignment="CENTER">
+               <font>
+                  <Font name="Bell MT" size="21.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Label>
+            <Separator prefWidth="200.0" VBox.vgrow="ALWAYS" />
+         </children>
+      </VBox>
+   </top>
+   <bottom>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="buttonAddApartment" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clickAddApartment" prefWidth="90.0" text="Lisää asunto">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="15.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="buttonDeleteApartment" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clickDeleteApartment" prefWidth="90.0" text="Poista asunto">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="66.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Separator HBox.hgrow="ALWAYS" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
